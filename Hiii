@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Background</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- New font for heading -->
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Default text color */
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            position: relative; /* For positioning the overlay */
+            overflow: hidden; /* Prevent overflow */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/1767434/pexels-photo-1767434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Love-related image */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the image */
+            z-index: 1; /* Place behind the text */
+        }
+        .heading-container {
+            position: relative;
+            z-index: 2; /* Place above the background */
+            padding: 20px;
+            background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background */
+            border-radius: 10px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+        }
+        h1 {
+            font-size: 3em;
+            font-family: 'Montserrat', sans-serif; /* New font for heading */
+            color: #FFD700; /* Gold color for the heading */
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 2; /* Place above the background */
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div> <!-- Background image -->
+    <div class="heading-container" id="headingContainer">
+        <h1>You are my today and all of my tomorrows</h1>
+    </div>
+    <button class="back-button" onclick="window.history.back();">Back</button>
+
+    <script>
+        // Function to show the heading after 7 seconds
+        setTimeout(function() {
+            document.getElementById('headingContainer').style.opacity = 1; // Change opacity to 1 to show the heading
+        }, 7000); // 7000 milliseconds = 7 seconds
+    </script>
+
+</body>
+</html>
